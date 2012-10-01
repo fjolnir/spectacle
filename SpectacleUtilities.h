@@ -20,7 +20,7 @@
 
 #pragma mark -
 
-#define MovingToNextOrPreviousDisplay(action) ((action == SpectacleWindowActionNextDisplay) || (action == SpectacleWindowActionPreviousDisplay))
+#define MovingToNextOrPreviousDisplay(action) ((action & SpectacleWindowActionNextDisplay) || (action & SpectacleWindowActionPreviousDisplay))
 
 #define WindowIsLeftAligned(f, splitFactor, screenFrame) \
     ((f.origin.x == screenFrame.origin.x) \
