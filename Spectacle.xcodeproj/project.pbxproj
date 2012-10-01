@@ -34,6 +34,7 @@
 		2D8DA05E147E113D003BE1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 077938E51184FADB0013BC14 /* main.m */; };
 		2DD111AC1487301C00C552FA /* Preferences Window Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD111AB1487301C00C552FA /* Preferences Window Background.png */; };
 		2DF03CEE148684E000D09E90 /* Spectacle.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2DF03CED148684E000D09E90 /* Spectacle.icns */; };
+		C79B8B5516193953002FF5F8 /* libarclite_macosx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C79B8B5416193953002FF5F8 /* libarclite_macosx.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		2DD111AB1487301C00C552FA /* Preferences Window Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Preferences Window Background.png"; path = "Resources/Images/Preferences Window Background.png"; sourceTree = "<group>"; };
 		2DF03CED148684E000D09E90 /* Spectacle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Spectacle.icns; path = Resources/Images/Icons/Spectacle.icns; sourceTree = "<group>"; };
 		32DBCFA20370C41700C91783 /* Spectacle.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spectacle.pch; sourceTree = "<group>"; };
+		C79B8B5416193953002FF5F8 /* libarclite_macosx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libarclite_macosx.a; path = /usr/lib/arc/libarclite_macosx.a; sourceTree = "<absolute>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79B8B5516193953002FF5F8 /* libarclite_macosx.a in Frameworks */,
 				2D1E1ACE147E07870021D73D /* Carbon.framework in Frameworks */,
 				2D1E1ACF147E078A0021D73D /* Cocoa.framework in Frameworks */,
 				2D5CCD0415E970A70009CC43 /* Sparkle.framework in Frameworks */,
@@ -283,6 +286,7 @@
 		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C79B8B5416193953002FF5F8 /* libarclite_macosx.a */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
 			);
@@ -600,7 +604,11 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				SDKROOT = macosx;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib/arc,
+				);
+				SDKROOT = macosx10.7;
 				VERSION_INFO_FILE = "";
 			};
 			name = Development;
@@ -612,7 +620,11 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				SDKROOT = macosx;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib/arc,
+				);
+				SDKROOT = macosx10.7;
 				VERSION_INFO_FILE = "";
 			};
 			name = Release;

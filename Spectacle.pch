@@ -1,4 +1,19 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
     #import <QuartzCore/QuartzCore.h>
+    #if __MAC_OS_X_VERSION_MIN_REQUIRED < 1080
+    // Implemented in arclite
+    @interface NSDictionary (Subscripts)
+    - (id)objectForKeyedSubscript:(id)key;
+    @end
+    @interface NSMutableDictionary (Subscripts)
+    - (void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key;
+    @end
+    @interface NSArray (Subscripts)
+    - (id)objectAtIndexedSubscript:(NSUInteger)idx;
+    @end
+    @interface NSMutableArray (Subscripts)
+    - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
+    @end
+    #endif
 #endif
